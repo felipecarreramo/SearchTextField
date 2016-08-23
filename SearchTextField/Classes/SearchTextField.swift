@@ -88,6 +88,7 @@ public class SearchTextField: UITextField {
         self.addTarget(self, action: #selector(SearchTextField.textFieldDidChange), forControlEvents: .EditingChanged)
         self.addTarget(self, action: #selector(SearchTextField.textFieldDidBeginEditing), forControlEvents: .EditingDidBegin)
         self.addTarget(self, action: #selector(SearchTextField.textFieldDidEndEditing), forControlEvents: .EditingDidEnd)
+        self.addTarget(self, action: #selector(SearchTextField.textFieldDidBeginEditing), forControlEvents: .TouchUpInside )
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SearchTextField.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SearchTextField.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
@@ -204,6 +205,7 @@ public class SearchTextField: UITextField {
         
         if text!.isEmpty {
             clearResults()
+            filter(true)
             tableView?.reloadData()
         } else {
             filter(false)
@@ -214,7 +216,10 @@ public class SearchTextField: UITextField {
         if startVisible && text!.isEmpty {
             clearResults()
             filter(true)
+            return
         }
+        
+        filter(false)
     }
     
     public func textFieldDidEndEditing() {
