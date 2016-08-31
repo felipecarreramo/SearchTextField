@@ -35,8 +35,10 @@ public class SearchTextField: UITextField {
     public func filterStrings(strings: [String]) {
         var items = [SearchTextFieldItem]()
         
-        for value in strings {
-            items.append(SearchTextFieldItem(title: value))
+        for (index, value) in strings.enumerate() {
+            var item = SearchTextFieldItem(title: value)
+            item.index = index
+            items.append(item)
         }
         
         filterDataSource = items
@@ -398,6 +400,7 @@ public struct SearchTextFieldItem {
     public var title: String
     public var subtitle: String?
     public var image: UIImage?
+    public var index: Int?
     
     public init(title: String, subtitle: String?, image: UIImage?) {
         self.title = title
