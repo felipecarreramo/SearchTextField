@@ -55,6 +55,8 @@ public class SearchTextField: UITextField {
     
     public var loadMoreFilterItems: SearchTextFieldLoadMoreFilterItemsHandler?
     
+    public var resultsViewMaxHeight: CGFloat = 200.0
+    
     public func showLoadingIndicator() {
         self.rightViewMode = .Always
         indicator.startAnimating()
@@ -145,7 +147,7 @@ public class SearchTextField: UITextField {
             
             if self.direction == .Down {
                 let tableHeight = min((tableView.contentSize.height + positionGap), (UIScreen.mainScreen().bounds.size.height - frame.origin.y - theme.cellHeight))
-                tableView.frame = CGRectMake(frame.origin.x + 2, (frame.origin.y + frame.size.height - positionGap), frame.size.width - 4, tableHeight)
+                tableView.frame = CGRectMake(frame.origin.x + 2, (frame.origin.y + frame.size.height - positionGap), frame.size.width - 4, tableHeight > resultsViewMaxHeight ? resultsViewMaxHeight:  tableHeight)
                 shadowView!.frame = CGRectMake(frame.origin.x + 3, (frame.origin.y + frame.size.height - 3), frame.size.width - 6, 1)
                 tableView.contentInset = UIEdgeInsets(top: positionGap, left: 0, bottom: 0, right: 0)
                 tableView.contentOffset = CGPointMake(0, -positionGap)
