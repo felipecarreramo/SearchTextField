@@ -332,13 +332,7 @@ extension SearchTextField: UITableViewDelegate, UITableViewDataSource {
                     return cell!
                 }
                 
-                var items = [SearchTextFieldItem]()
-                
-                for value in loadMoreFilterItems() {
-                    items.append(SearchTextFieldItem(title: value))
-                }
-                
-                filterDataSource += items
+                loadMoreFilterItems()
             }
         }
 
@@ -420,7 +414,7 @@ public struct SearchTextFieldItem {
 }
 
 public typealias SearchTextFieldItemHandler = (item: SearchTextFieldItem) -> Void
-public typealias SearchTextFieldLoadMoreFilterItemsHandler = () -> [String]
+public typealias SearchTextFieldLoadMoreFilterItemsHandler = () -> ()
 
 ////////////////////////////////////////////////////////////////////////
 // Suggestions List Direction
