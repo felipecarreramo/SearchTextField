@@ -51,6 +51,10 @@ public class SearchTextField: UITextField {
     /// Set your custom set of attributes in order to highlight the string found in each item
     public var highlightAttributes: [String: AnyObject] = [NSFontAttributeName:UIFont.boldSystemFontOfSize(10)]
     
+    public var totalItemsToFilter: Int?
+    
+    public var loadMoreFilterItems: SearchTextFieldLoadMoreFilterItemsHandler?
+    
     public func showLoadingIndicator() {
         self.rightViewMode = .Always
         indicator.startAnimating()
@@ -315,6 +319,29 @@ extension SearchTextField: UITableViewDelegate, UITableViewDataSource {
         
         cell!.selectionStyle = .None
         
+        
+        if indexPath.row == filterDataSource.count - 1 {
+            
+            guard let totalItemsToFilter = totalItemsToFilter else {
+                return cell!
+            }
+            
+            if totalItemsToFilter > filterDataSource.count {
+                
+                guard let loadMoreFilterItems = loadMoreFilterItems else {
+                    return cell!
+                }
+                
+                var items = [SearchTextFieldItem]()
+                
+                for value in loadMoreFilterItems() {
+                    items.append(SearchTextFieldItem(title: value))
+                }
+                
+                filterDataSource += items
+            }
+        }
+
         return cell!
     }
     
@@ -393,6 +420,7 @@ public struct SearchTextFieldItem {
 }
 
 public typealias SearchTextFieldItemHandler = (item: SearchTextFieldItem) -> Void
+public typealias SearchTextFieldLoadMoreFilterItemsHandler = () -> [String]
 
 ////////////////////////////////////////////////////////////////////////
 // Suggestions List Direction
