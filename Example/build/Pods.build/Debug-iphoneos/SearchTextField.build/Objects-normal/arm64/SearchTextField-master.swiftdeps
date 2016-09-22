@@ -1,0 +1,5 @@
+version: "Apple Swift version 3.0 (swiftlang-800.0.46.2 clang-800.0.38)"
+options: "4c96667ff79839b58eecd5a0780ebe95"
+build_time: [527891319, 929615000]
+inputs:
+  "/Users/JuanCarrera/Development/SearchTextField/SearchTextField/Classes/SearchTextField.swift": !dirty [527891312, 0]

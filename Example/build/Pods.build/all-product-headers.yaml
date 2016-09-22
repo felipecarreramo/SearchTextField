@@ -4,28 +4,55 @@
   'roots': [
     {
       'type': 'directory',
-      'name': "/Users/Alejandro/Documents/Projects/iOS/Libraries/SearchTextField/Example/build/Debug-iphonesimulator/SearchTextField.framework/Headers",
+      'name': "/Users/JuanCarrera/Development/SearchTextField/Example/build/Debug-iphoneos/Pods_SearchTextField_Example.framework/Headers",
       'contents': [
         {
           'type': 'file',
-          'name': "SearchTextField-Swift.h",
-          'external-contents': "/Users/Alejandro/Documents/Projects/iOS/Libraries/SearchTextField/Example/build/Debug-iphonesimulator/SearchTextField.framework/Headers/SearchTextField-Swift.h"
+          'name': "Pods-SearchTextField_Example-umbrella.h",
+          'external-contents': "/Users/JuanCarrera/Development/SearchTextField/Example/Pods/Target Support Files/Pods-SearchTextField_Example/Pods-SearchTextField_Example-umbrella.h"
         },
         {
           'type': 'file',
-          'name': "SearchTextField-umbrella.h",
-          'external-contents': "/Users/Alejandro/Documents/Projects/iOS/Libraries/SearchTextField/Example/Pods/Target Support Files/SearchTextField/SearchTextField-umbrella.h"
+          'name': "Pods_SearchTextField_Example-Swift.h",
+          'external-contents': "/Users/JuanCarrera/Development/SearchTextField/Example/build/Debug-iphoneos/Pods_SearchTextField_Example.framework/Headers/Pods_SearchTextField_Example-Swift.h"
         }
       ]
     },
     {
       'type': 'directory',
-      'name': "/Users/Alejandro/Documents/Projects/iOS/Libraries/SearchTextField/Example/build/Debug-iphonesimulator/SearchTextField.framework/Modules",
+      'name': "/Users/JuanCarrera/Development/SearchTextField/Example/build/Debug-iphoneos/Pods_SearchTextField_Example.framework/Modules",
       'contents': [
         {
           'type': 'file',
           'name': "module.modulemap",
-          'external-contents': "/Users/Alejandro/Documents/Projects/iOS/Libraries/SearchTextField/Example/build/Pods.build/Debug-iphonesimulator/SearchTextField.build/module.modulemap"
+          'external-contents': "/Users/JuanCarrera/Development/SearchTextField/Example/build/Pods.build/Debug-iphoneos/Pods-SearchTextField_Example.build/module.modulemap"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/JuanCarrera/Development/SearchTextField/Example/build/Debug-iphoneos/SearchTextField/SearchTextField.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "SearchTextField-Swift.h",
+          'external-contents': "/Users/JuanCarrera/Development/SearchTextField/Example/build/Debug-iphoneos/SearchTextField/SearchTextField.framework/Headers/SearchTextField-Swift.h"
+        },
+        {
+          'type': 'file',
+          'name': "SearchTextField-umbrella.h",
+          'external-contents': "/Users/JuanCarrera/Development/SearchTextField/Example/Pods/Target Support Files/SearchTextField/SearchTextField-umbrella.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/JuanCarrera/Development/SearchTextField/Example/build/Debug-iphoneos/SearchTextField/SearchTextField.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/JuanCarrera/Development/SearchTextField/Example/build/Pods.build/Debug-iphoneos/SearchTextField.build/module.modulemap"
         }
       ]
     }
